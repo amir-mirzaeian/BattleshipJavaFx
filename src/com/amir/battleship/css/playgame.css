@@ -1,0 +1,14 @@
+
+#gp{
+    -fx-background-color: beige;
+}
+.label{
+    -fx-text-fill: red;
+    -fx-font-size: 24px;
+    -fx-text-alignment: center;
+    -fx-content-display: center;
+    -fx-alignment: center;
+}
+#anchorPane{
+    -fx-background-image: url(../image/shipImage.jpg);
+}
