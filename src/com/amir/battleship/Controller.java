@@ -195,13 +195,13 @@ public class Controller {
             /*
             To check if the enemy board has been created right
              */
-            for (Node node : enemyBoard.getChildren()) {
-                String value = node.getId();
-                if (value == "notPermitted") ((Rectangle) node).setFill(Color.GREEN);
-                else if (value == null) ((Rectangle) node).setFill(Color.PURPLE);
-                else ((Rectangle) node).setFill(Color.LIGHTBLUE);
-
-            }
+//            for (Node node : enemyBoard.getChildren()) {
+//                String value = node.getId();
+//                if (value == "notPermitted") ((Rectangle) node).setFill(Color.GREEN);
+//                else if (value == null) ((Rectangle) node).setFill(Color.PURPLE);
+//                else ((Rectangle) node).setFill(Color.LIGHTBLUE);
+//
+//            }
             startGameBtn.setDisable(true);
             playerBoard.setDisable(true);
         }
