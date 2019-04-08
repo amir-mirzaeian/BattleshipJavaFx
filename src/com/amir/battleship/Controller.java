@@ -34,7 +34,7 @@ public class Controller {
 
     private boolean nameIsPresent = false;
     private AI ai = new AI();
-    private int player = 0, enemy = 0,gameNo = 0, playerTotal = 0, enemyTotal = 0;
+    private int player = 0, enemy = 0, gameNo = 0, playerTotal = 0, enemyTotal = 0;
     private Random random = new Random();
     private static Map<Ship, HBox> shipList = new HashMap<>();
     private static int shipsAddedNo = 0; // checks if all the ships added to the player board so that the game can be started
@@ -423,7 +423,7 @@ public class Controller {
 
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Game Over");
-        gameNo ++;
+        gameNo++;
         if (point == enemy) {
             alert.setHeaderText("Enemy Won");
             alert.setContentText("The Game Has been finished.Better Luck Next Time.Replay?");
@@ -580,7 +580,8 @@ public class Controller {
         enemyScore.setText("0");
 
     }
-    private void createPlayerInf(){
+
+    private void createPlayerInf() {
         TextInputDialog dialog = new TextInputDialog("Your name");
         dialog.setTitle("Player's Name");
         dialog.setHeaderText("I would like to call you by your name.");
