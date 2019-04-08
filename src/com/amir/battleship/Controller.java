@@ -353,8 +353,11 @@ public class Controller {
                     player++;
                     playerScore.setText(Integer.toString(player));
                     if (player == 17) {
+
+                        enemyBoard.setDisable(true);
+                        playerBoard.setDisable(true);
                         showWinner(player);
-                        bonus = false;
+                        return;
                     }
 
                 } else if (((Rectangle) node).getFill().equals(Color.BLACK))
@@ -393,6 +396,9 @@ public class Controller {
                     ((Rectangle) node).setFill(Color.BLACK);
                     enemy++;
                     if (enemy == 17) {
+
+                        enemyBoard.setDisable(true);
+                        playerBoard.setDisable(true);
                         showWinner(enemy);
                         return;
                     }
@@ -439,8 +445,6 @@ public class Controller {
             noticeBoard.setText("Great....You won the game.");
             playerTotal++;
         }
-        playerBoard.setDisable(true);
-        enemyBoard.setDisable(true);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
             reset();
