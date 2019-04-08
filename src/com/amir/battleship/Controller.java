@@ -195,6 +195,7 @@ public class Controller {
             /*
             To check if the enemy board has been created right
              */
+
 //            for (Node node : enemyBoard.getChildren()) {
 //                String value = node.getId();
 //                if (value == "notPermitted") ((Rectangle) node).setFill(Color.GREEN);
@@ -353,6 +354,7 @@ public class Controller {
                     playerScore.setText(Integer.toString(player));
                     if (player == 17) {
                         showWinner(player);
+                        bonus = false;
                     }
 
                 } else if (((Rectangle) node).getFill().equals(Color.BLACK))
@@ -390,11 +392,13 @@ public class Controller {
                 if (((Rectangle) node).getFill().equals(Color.RED)) {
                     ((Rectangle) node).setFill(Color.BLACK);
                     enemy++;
-                    if (enemy == 17) showWinner(enemy);
+                    if (enemy == 17) {
+                        showWinner(enemy);
+                        return;
+                    }
                     enemyScore.setText(Integer.toString(enemy));
                     noticeBoard.appendText("\nOHH The enemy fired the right place.");
                     noticeBoard.appendText("\nBonus: The enemy can hit once more.");
-
 
                     ai.setFound(true);
                     createEnemyMove();
@@ -554,6 +558,7 @@ public class Controller {
     needed variables
      */
     private void reset() {
+
         initialize();
 
         for (Node node : playerBoard.getChildren()) { // recreates the playerboard
